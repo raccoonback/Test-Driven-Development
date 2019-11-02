@@ -16,8 +16,13 @@ import static org.junit.jupiter.api.Assertions.*;
  * () Money 반올림?
  * (Done) equals()
  * () hashCode()
- * Equal null
- * Equal object
+ * () Equal null
+ * () Equal object
+ * (Done) 5CHF * 2 = 10CHF
+ * () Dollar/Franc 중복
+ * (Done) 공용 equals
+ * () 공용 times
+ * () Franc과 Dollar 비교하기
  *
  */
 class OperatorTest {
@@ -33,6 +38,14 @@ class OperatorTest {
     void testEquality() {
         assertTrue(new Dollar(5).equals(new Dollar(5)));
         assertFalse(new Dollar(5).equals(new Dollar(6)));
+
+    }
+
+    @Test
+    void testFrancMultiplication() {
+        Franc five = new Franc(5);
+        assertEquals(new Franc(10), five.times(2));
+        assertEquals(new Franc(15), five.times(3));
 
     }
 
