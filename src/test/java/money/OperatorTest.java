@@ -22,7 +22,8 @@ import static org.junit.jupiter.api.Assertions.*;
  * () Dollar/Franc 중복
  * (Done) 공용 equals
  * () 공용 times
- * () Franc과 Dollar 비교하기
+ * (Done) Franc과 Dollar 비교하기
+ * () 통화?
  *
  */
 class OperatorTest {
@@ -40,6 +41,8 @@ class OperatorTest {
         assertFalse(new Dollar(5).equals(new Dollar(6)));
         assertTrue(new Franc(5).equals(new Franc(5)));
         assertFalse(new Franc(5).equals(new Franc(6)));
+        assertFalse(new Franc(5).equals(new Dollar(5)));
+        assertFalse(new Dollar(5).equals(new Franc(5)));
 
     }
 
