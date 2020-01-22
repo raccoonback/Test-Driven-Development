@@ -4,7 +4,7 @@ package money;
  * Created by koseungbin on 2019-11-02
  */
 
-public abstract class Money {
+public class Money {
     protected int amount;
     protected String currency;
 
@@ -14,16 +14,24 @@ public abstract class Money {
 
     }
 
-    abstract Money times(int multiplier);
+    public Money times(int multiplier) {
+        return new Money(amount * multiplier, currency);
 
-    String currency() {
+    }
+
+    public String currency() {
         return this.currency;
 
     }
 
     public boolean equals(Object object) {
         Money money = (Money) object;
-        return amount == money.amount && getClass().equals(money.getClass());
+        return amount == money.amount && currency().equals(money.currency());
+
+    }
+
+    public String toString() {
+        return amount + " " + currency;
 
     }
 
