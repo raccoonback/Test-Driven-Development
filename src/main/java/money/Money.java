@@ -4,7 +4,7 @@ package money;
  * Created by koseungbin on 2019-11-02
  */
 
-public class Money implements Expression{
+public class Money implements Expression {
     protected int amount;
     protected String currency;
 
@@ -20,7 +20,12 @@ public class Money implements Expression{
     }
 
     public Expression plus(Money added) {
-        return new Money(amount + added.amount, currency);
+        return new Sum(this, added);
+
+    }
+
+    public Money reduce(String to) {
+        return this;
 
     }
 
