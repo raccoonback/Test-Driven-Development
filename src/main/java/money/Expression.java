@@ -9,4 +9,6 @@ public interface Expression {
 
     Expression plus(Expression added);
 
+    Expression times(int multiplier);
+
 }

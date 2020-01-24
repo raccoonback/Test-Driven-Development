@@ -22,7 +22,13 @@ public class Sum implements Expression {
 
     @Override
     public Expression plus(Expression added) {
-        return null;
+        return new Sum(this, addend);
+
+    }
+
+   public Expression times(int multiplier) {
+        return new Sum(augend.times(multiplier), addend.times(multiplier));
+
     }
 
 }
